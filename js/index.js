@@ -2,44 +2,36 @@
 // let - variable 
 // var - old variable
 
-const a = parseFloat(prompt('Please, define the coefficient "a"'));
-if (a==0) {
-    alert('a≠0, try again')a;
+const a = parseFloat(prompt('Please, enter the coefficient "a"'));
+if (a == 0) {
+    alert('a≠0, try again');
 }
-const b = parseFloat(prompt('Please, define the coefficient "b"'));
-const c = parseFloat(prompt('Please, define the coefficient "c"'));
+const b = parseFloat(prompt('Please, enter the coefficient "b"'));
+const c = parseFloat(prompt('Please, enter the coefficient "c"'));
 
-alert(a);
-alert(b);
-alert(c);
-const d = calcDiscr(a, b, c);
-function calcDiscr(a, b, c) {
-    d = (b*b) - 4ac;
-    return d;
-}
-function solvingQuadEq (a, b, c) {
+const result = solvingQuadEq(a, b, c);
+
+function solvingQuadEq(a, b, c) {
+    const d = calcDiscr(a, b, c);
+    let x1 = null;
+    let x2 = null;
     if (d > 0) {
-        x1 = (-b + Math.sqrt(d))/2a;
-        x2 = (-b - Math.sqrt(d))/2a;
-        alert('x1 = ' + x1 + ', x2 = ' + x2);
+        x1 = (-b + Math.sqrt(d)) / (2 * a);
+        x2 = (-b - Math.sqrt(d)) / (2 * a);
+        return ('x1 = ' + x1 + ', x2 = ' + x2);
     } else if (d == 0) {
-        x1 = -(b/2a);
-        x = x1;
-        alert('x =' + x1);
+        x1 = -(b / (2 * a));
+        return ('x =' + x1);
     } else if (d < 0) {
-        x1 = (-b + Math.sqrt(-(b*b) + 4ac))/2a;
-        x2 = (-b - Math.sqrt(-(b*b) + 4ac))/2a;
-        alert('x1 = ' + x1 + ', x2 = ' + x2);
+        return ('There are no real roots');
+    } else {
+        return 0;
     }
-    
 }
-
-
-
-
-
-
-
+function calcDiscr(a, b, c) {
+    return (b * b) - (4 * a * c);
+}
+alert(result);
 
 /*
 const greetings = 'Hello';
@@ -67,8 +59,3 @@ function addNums(a, b) {
     return a + b;
 }
 */
-
-
-
-
-
