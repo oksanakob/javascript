@@ -8,24 +8,32 @@ if (a==0) {
 }
 const b = parseFloat(prompt('Please, define the coefficient "b"'));
 const c = parseFloat(prompt('Please, define the coefficient "c"'));
-function solvingQuadEq (a, b, c) {
-    const d = calcDiscr(a, b, c);
-    if (d > 0) {
-        x1 = (-b + Math.sqrt(d))/2a;
-        x2 = (-b - Math.sqrt(d))/2a;
-        return 'x1 = ' + x1 + ', x2 = ' + x2;
-    } else if (d == 0) {
-        x1 = -(b/2a);
-        x = x1;
-    } else if (d < 0) {
-        x1 = (-b + Math.sqrt(-(b*b) + 4ac))/2a;
-        x2 = (-b - Math.sqrt(-(b*b) + 4ac))/2a;
-    }
-}
+
+alert(a);
+alert(b);
+alert(c);
+const d = calcDiscr(a, b, c);
 function calcDiscr(a, b, c) {
     d = (b*b) - 4ac;
     return d;
 }
+function solvingQuadEq (a, b, c) {
+    if (d > 0) {
+        x1 = (-b + Math.sqrt(d))/2a;
+        x2 = (-b - Math.sqrt(d))/2a;
+        alert('x1 = ' + x1 + ', x2 = ' + x2);
+    } else if (d == 0) {
+        x1 = -(b/2a);
+        x = x1;
+        alert('x =' + x1);
+    } else if (d < 0) {
+        x1 = (-b + Math.sqrt(-(b*b) + 4ac))/2a;
+        x2 = (-b - Math.sqrt(-(b*b) + 4ac))/2a;
+        alert('x1 = ' + x1 + ', x2 = ' + x2);
+    }
+    
+}
+
 
 
 
